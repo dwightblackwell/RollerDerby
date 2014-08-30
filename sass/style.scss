@@ -1,0 +1,36 @@
+@import "breakpoint";
+@import "partials/variables";
+@import "partials/grid";
+@import "partials/calendar";
+
+.bannerhead {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    text-align: center;
+    border-top: 15px solid RoyalBlue;
+    border-bottom: 15px solid RoyalBlue;
+    overflow: hidden;    
+}
+
+.bannerhead img {
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+
+//SCHEDULE and CALENDAR
+
+.schedule {
+	width: 100%;
+	height: auto;
+	background-color: pink;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	overflow: auto;
+}
+

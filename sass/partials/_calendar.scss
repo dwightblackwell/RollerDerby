@@ -1,0 +1,145 @@
+@import 'partials/variables';
+
+table.calendar_small{
+	width: 265px;
+	height: 265px;
+	font-size: 14px;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	margin: 10px;
+	border-collapse: collapse;
+	border-spacing:0;
+}
+
+table.calendar_small th{
+	padding: 0;
+	margin: 0;
+	font-weight:bold;
+	border-bottom: 1px solid #555555;
+}
+
+table.calendar_small td{
+	padding: 0;
+	margin: 0;
+	width: 14%;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	color: #222222;
+	border: 1px solid #DDDDDD;
+}
+
+table.calendar_small td.months_heading
+{
+	border-left: 0;
+	border-right: 0;
+	color: #555555;
+	font-weight:bold;
+}
+
+table.calendar_small td.other_month{
+	background-color: #EEEEEE;
+	color: #999999;
+}
+
+table.calendar_small td.entries{
+	background-color: #FFFFE0;
+}
+
+table.calendar_small td.entries a{
+	display: block;
+	font-weight:bold;
+	color: #555555;
+	background-color: #FFFFE0;
+	text-decoration: none;
+}
+
+table.calendar_small td.today,
+table.calendar_small td.today a
+{
+	background-color: #555555;
+	color: #FFFFFF;
+}
+
+
+
+/************************************************************************************/
+/************************************************************************************/
+
+
+
+table.calendar_big{
+	width: 800px;
+	font-size: 100%;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	margin: 0;
+	border-collapse: collapse;
+	border-spacing:0;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+table.calendar_big th{
+	font-size: 130%;
+	font-weight: normal;
+	line-height: 2.5em;
+	border-bottom: 1px solid #555555;
+}
+
+table.calendar_big td{
+	padding: 4px;
+	margin: 0;
+	width: 14%;
+	text-align: left;
+	background-color: #FFFFFF;
+	color: #222222;
+	border: 1px solid #DDDDDD;
+	vertical-align: top;
+	height: 100px;		
+}
+
+table.calendar_big td.months_heading
+{
+	border-left: 0;
+	border-right: 0;
+	color: #555555;
+	font-weight: bold;
+	height: 2.5em;
+	vertical-align: middle;
+}
+
+table.calendar_big td.other_month{
+	background-color: #EEEEEE;
+	color: #999999;
+}
+
+table.calendar_big a{
+	font-weight:normal;
+	color: #555555;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+table.calendar_big a:hover{
+	text-decoration: underline;
+}
+
+table.calendar_big td.today,
+table.calendar_big td.today a
+{
+	background-color: #555555;
+	color: #FFFFFF;
+}
+
+table.calendar_big td ul{
+	font-size: 80%;
+	line-height: 1.2;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0.5em 0 0;
+	padding-left: 0;
+}
+
+table.calendar_big td li{
+	margin-bottom: 1px;
+}

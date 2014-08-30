@@ -1,0 +1,58 @@
+NOTES ON COUCH SINGLE PAGE SITE:
+
+    Link to Cloud9 MySQL docs: https://docs.c9.io/setting_up_mysql.html
+
+    Setting up MySQL:
+        
+        in top level bash, type: mysql-ctl start
+
+        
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        
+    Setting up file structure/compass/breakpoint/sass:
+    
+        int top level bash, type the following:
+            
+            gem update --system
+            gem install compass --pre
+            gem install breakpoint
+            compass create WebsiteNameGoesHere -r breakpoint --sass-dir "sass" --css-dir "stylesheets" --javascripts-dir "js" --images-dir "images"
+            
+                then do compass watch ./WebsiteNameGoesHere to convert sass to css
+                
+                you'll have to manually add the "images" and "js" directory as subfolders of the WebsiteNameGoesHere folder
+                also add the reset.css and normailize.css to your stylesheets directory
+                
+                remember to add the following at the top of your style.scss file: 
+                    @import 'breakpoint';
+                    @import 'partials/variables';
+                    @import 'partials/grid';       //if applicable
+                    
+                    also import variables in your grid partial   //if applicable
+                    
+                    add the following to your _variables.scss file for universal box-sizing and body/html height/width:
+                    
+                        //UNIVERSALIS
+                        body, html {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        
+                        *, *:before, *:after {
+                          -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                         }
+                         
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COUCH CMS NOTES:
+
+    Find config.example.php
+        Change 'database_name', 'database_username', 'database_password' and MySQL hostname values to your setup
+        
+            In cloud9, default database name is 'c9', database_username is 'shambolaz', database_password is '' (blank), MySQL K_DB_HOST is getenv('IP')   <--Note where the quotes are for K_DB_HOST
+            
+        Rename it to config.php and save

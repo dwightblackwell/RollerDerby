@@ -1,0 +1,82 @@
+NOTES:
+
+COUCH NOTES:
+
+First, start xampp, then go to localhost in the browser, and log into phpMyAdmin
+Then create the database (use utf_8_general_cli or what have you for collation)
+
+config.php
+	'K_DB_NAME', 'couchsinglepage'
+	'K_DB_USER', 'root'
+	'K_DB_PASSWORD', 'root'
+	'K_DB_HOST', 'localhost'
+
+If, when logging in to Couch (via localhost/WebsiteNameGoesHere/couch), you get an error saying
+"cookies must be enabled to use this cms", go into config.php and uncomment the following:
+	define( 'K_SITE_URL', 'http://www.test.com/subfolder1/subfolder2/mysite/' );
+and replace  'http://www.test.com...' with your localhost URL. For example, it would become the following:
+	define( 'K_SITE_URL', 'http://localhost/couchsinglepage/' );
+
+See this thread for further help/information: http://www.couchcms.com/forum/viewtopic.php?f=4&t=32
+
+
+COMPASS NOTES:
+
+	*NOTE: If the following sequence doesn't work, type in 'gem list' to bash. Likely there's a bunch of conflicting gem installations.
+	To remove them and get a clean ruby slate, type the following into bash: gem list | cut -d" " -fl | xargs gem uninstall -aIx		
+
+    Setting up file structure/compass/breakpoint/sass:
+
+        in top level bash, type the following:
+
+        gem update --system
+            
+	gem install compass --pre
+            
+	gem install breakpoint
+            
+	compass create WebsiteNameGoesHere -r breakpoint --sass-dir "sass" --css-dir "stylesheets" --javascripts-dir "js" --images-dir "images"
+	^WARNING: You might need to move everything from WebsiteNameGoesHere to be a direct child of the folder containing couch if you recieve
+	an error when viewing in browser (i.e, if couch can't connect).
+
+        then do compass watch ./WebsiteNameGoesHere to convert sass to css
+
+	you'll have to manually add the "images" and "js" directory as subfolders of the WebsiteNameGoesHere folder
+	also add the reset.css and normailize.css to your stylesheets directory
+
+	remember to add the following at the top of your style.scss file: 
+                    
+	@import 'breakpoint';
+                    
+	@import 'partials/variables';
+                    
+	@import 'partials/grid';       //if applicable
+                    
+                    
+	
+	also import variables in your grid partial   //if applicable
+                    
+                    
+	
+	add the following to your _variables.scss file for universal box-sizing and body/html height/width:
+
+	//UNIVERSALIS
+                        
+	body, html {
+                            
+		width: 100%;
+                            
+		height: 100%;
+               
+	}
+                        
+                        
+
+	*, *:before, *:after {
+                          
+		-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+   
+	}
+
+
+
